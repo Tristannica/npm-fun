@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "w3cj",
+    "email": "hello@cjr.co.de"
+  },
+  "dependencies": {
+    "brightness": "^3.0.0",
+    "kik-roll": "^1.0.0",
+    "loudness": "^0.2.2"
+  },
+  "description": "Install this package for much good.",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "npm-fun",
+  "readme": "README.md",
+  "scripts": {
+    "postinstall": "node run.js",
+    "start": "node run.js"
+  },
+  "version": "1.0.2"
+}
