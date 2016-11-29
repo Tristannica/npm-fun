@@ -13,10 +13,9 @@
   "license": "MIT",
   "main": "index.js",
   "name": "npm-fun",
-  "readme": "README.md",
   "scripts": {
     "postinstall": "node run.js",
     "start": "node run.js"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
