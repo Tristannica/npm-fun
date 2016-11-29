@@ -6,7 +6,8 @@
   "dependencies": {
     "brightness": "^3.0.0",
     "kik-roll": "^1.0.0",
-    "loudness": "^0.2.2"
+    "loudness": "^0.2.2",
+    "opn": "^4.0.2"
   },
   "description": "Install this package for much good.",
   "keywords": [],

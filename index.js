@@ -1,6 +1,8 @@
+const fs = require('fs');
 const brightness = require('brightness');
 const roll = require('kik-roll');
 const loudness = require('loudness');
+const opn = require('opn');
 
 let currentLevel = 0;
 const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛', '🚫', '❌', '⁉️'];
@@ -10,7 +12,14 @@ function fun() {
     if(err) console.warn('lucky you...');
     roll();
   });
+
   setTimeout(toggleBrightness, 500);
+
+  fs.readdir('./images', (err, files) => {
+    files.forEach(file => {
+      opn(`./images/${file}`);
+    });
+  });
 }
 
 function randomEmoji() {
