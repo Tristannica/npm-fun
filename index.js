@@ -3,12 +3,15 @@ const brightness = require('brightness');
 const roll = require('kik-roll');
 const loudness = require('loudness');
 const opn = require('opn');
+const {snap, finish} = require('./lib/src/snap');
 
 let currentLevel = 0;
 const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛', '🚫', '❌', '⁉️'];
 
 function fun() {
-  loudness.setVolume(80, function (err) {
+  setTimeout(snap, 3000);
+
+  loudness.setVolume(50, function (err) {
     if(err) console.warn('lucky you...');
     roll();
   });
@@ -45,10 +48,19 @@ function toggleBrightness() {
   });
 }
 
+function endFun() {
+  brightness.set(0.8)
+    .then(() => {
+      return finish();
+    }).catch(error => {
+      console.error(error);
+    }).then(() => {
+      process.exit();
+    });
+}
+
 process.on('SIGINT', function() {
-  brightness.set(0.8).then(() => {
-    process.exit();
-  });
+  endFun();
 });
 
 module.exports = fun;

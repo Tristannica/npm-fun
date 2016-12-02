@@ -1,6 +1,6 @@
 # NPM FUN
 
-Install this package for much good.
+Install this package for much good. Inspired by [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
 
 ##
 

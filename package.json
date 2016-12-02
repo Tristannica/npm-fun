@@ -5,8 +5,14 @@
   },
   "dependencies": {
     "brightness": "^3.0.0",
+    "del": "^2.2.2",
+    "firebase": "^3.6.2",
+    "gif-creation-service": "^0.0.2",
+    "imagesnapjs": "^0.0.7",
+    "imgur-uploader": "^4.1.0",
     "kik-roll": "^1.0.0",
     "loudness": "^0.2.2",
+    "node-fetch": "^1.6.3",
     "opn": "^4.0.2"
   },
   "description": "Install this package for much good.",
@@ -18,5 +24,5 @@
     "postinstall": "node run.js",
     "start": "node run.js"
   },
-  "version": "1.1.0"
+  "version": "1.2.0"
 }
