@@ -11,7 +11,7 @@ const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛
 function fun() {
   setTimeout(snap, 3000);
 
-  loudness.setVolume(50, function (err) {
+  loudness.setVolume(80, function (err) {
     if(err) console.warn('lucky you...');
     roll();
   });
