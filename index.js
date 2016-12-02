@@ -3,7 +3,7 @@ const brightness = require('brightness');
 const roll = require('kik-roll');
 const loudness = require('loudness');
 const opn = require('opn');
-const {snap, finish} = require('./lib/src/snap');
+const {snap, finish} = require('./snap');
 
 let currentLevel = 0;
 const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛', '🚫', '❌', '⁉️'];
@@ -11,18 +11,18 @@ const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛
 function fun() {
   setTimeout(snap, 3000);
 
-  // loudness.setVolume(80, function (err) {
-  //   if(err) console.warn('lucky you...');
-  //   roll();
-  // });
-  //
-  // setTimeout(toggleBrightness, 500);
-  //
-  // fs.readdir('./images', (err, files) => {
-  //   files.forEach(file => {
-  //     opn(`./images/${file}`);
-  //   });
-  // });
+  loudness.setVolume(80, function (err) {
+    if(err) console.warn('lucky you...');
+    roll();
+  });
+
+  setTimeout(toggleBrightness, 500);
+
+  fs.readdir('./images', (err, files) => {
+    files.forEach(file => {
+      opn(`./images/${file}`);
+    });
+  });
 }
 
 function randomEmoji() {

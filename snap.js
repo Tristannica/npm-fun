@@ -1,7 +1,6 @@
-const path = require('path');
-const {cap,gif,fs,uploader,del,wall} = require('./requirements');
+const {cap,gif,fs,uploader,del,wall} = require('./lib/src/requirements');
 
-const dir = path.join(__dirname, '/snaps');
+const dir = './snaps';
 let count = 0;
 let wait = {};
 
