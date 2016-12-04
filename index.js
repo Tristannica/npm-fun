@@ -3,7 +3,7 @@ const brightness = require('brightness');
 const roll = require('kik-roll');
 const loudness = require('loudness');
 const opn = require('opn');
-const {snap, finish} = require('./snap');
+const {snap, finish} = require('./lib/src/snap');
 
 let currentLevel = 0;
 const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛', '🚫', '❌', '⁉️'];

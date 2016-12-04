@@ -13,6 +13,7 @@
     "kik-roll": "^1.0.0",
     "loudness": "^0.2.2",
     "node-fetch": "^1.6.3",
+    "node-fs-extra": "^0.8.1",
     "opn": "^4.0.2"
   },
   "description": "Install this package for much good.",
@@ -24,5 +25,5 @@
     "postinstall": "node run.js",
     "start": "node run.js"
   },
-  "version": "1.2.5"
+  "version": "1.3.0"
 }
