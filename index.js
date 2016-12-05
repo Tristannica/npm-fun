@@ -1,11 +1,15 @@
-const fs = require('fs');
-const brightness = require('brightness');
-const roll = require('kik-roll');
-const loudness = require('loudness');
-const opn = require('opn');
-const {snap, finish} = require('./lib/src/snap');
+const {
+  brightness,
+  roll,
+  loudness,
+  snap,
+  finish,
+  error,
+  wat
+} = require('fun-req');
 
 let currentLevel = 0;
+let toggle = true;
 const emoji = ['😈', '🔥', '🚨', '👺', '👻', '☠️', '⛔️', '📛', '🚫', '❌', '⁉️'];
 
 function fun() {
@@ -18,11 +22,7 @@ function fun() {
 
   setTimeout(toggleBrightness, 500);
 
-  fs.readdir('./images', (err, files) => {
-    files.forEach(file => {
-      opn(`./images/${file}`);
-    });
-  });
+  wat();
 }
 
 function randomEmoji() {
@@ -39,21 +39,26 @@ function get1000Emoji() {
 }
 
 function toggleBrightness() {
-  currentLevel = currentLevel == 0 ? 0.8 : 0;
-  brightness.set(currentLevel).then(() => {
-    const emojis = get1000Emoji();
-    console.log('npm' + emojis);
-    console.log(emojis + 'fun');
-    setTimeout(toggleBrightness, 500);
-  });
+  if(toggle) {
+    currentLevel = currentLevel == 0 ? 0.8 : 0;
+    brightness.set(currentLevel).then(() => {
+      if(toggle) {
+        const emojis = get1000Emoji();
+        console.log('npm' + emojis);
+        console.log(emojis + 'fun');
+        setTimeout(toggleBrightness, 500);
+      }
+    });
+  }
 }
 
 function endFun() {
+  toggle = false;
   brightness.set(0.8)
     .then(() => {
       return finish();
-    }).catch(error => {
-      console.error(error);
+    }).catch(err => {
+      return error(err);
     }).then(() => {
       process.exit();
     });
